@@ -1,6 +1,6 @@
 void trailL() {
   fill(0, 10);
-  strokeWeight(0);
+  stroke(0);
   rect(0,0, width, height);
   stroke(#DDDDDD);
   strokeWeight(4);

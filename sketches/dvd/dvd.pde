@@ -1,3 +1,6 @@
+// Sketch that simulates the screensaver of a vintage DVD player
+// Press spacebar to cycle framerates between 30, 60 and 120 fps
+
 float x, y;
 float x_e, y_e;
 int x_max, y_max;

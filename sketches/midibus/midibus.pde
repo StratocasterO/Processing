@@ -1,3 +1,5 @@
+// Sketch that draws with MIDI: turn CC knobs 14, 15 and 16!
+
 import themidibus.*;
 
 MidiBus myBus;
