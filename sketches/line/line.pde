@@ -1,11 +1,11 @@
-// Sketch that draws a color changing line rebounding in the canvas 🌈
+// Sketch that draws a color changing line rebounding in the canvas
 
 float x1, y1, x2, y2;
 float speed_x1, speed_y1, speed_x2, speed_y2;
 int hue;
 
 void setup() {
-  size(800, 450);
+  size(1000, 800);
   colorMode(HSB);
   background(0);
   
@@ -14,10 +14,10 @@ void setup() {
   y1 = random(0,height);  
   y2 = random(0,height);
   
-  speed_x1 = random(2,4);
-  speed_x2 = random(2,4);
-  speed_y1 = random(2,3);
-  speed_y2 = random(2,3);
+  speed_x1 = random(2,5);
+  speed_x2 = random(2,5);
+  speed_y1 = random(2,4);
+  speed_y2 = random(2,4);
   
   hue = 0;
 }
