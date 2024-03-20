@@ -1,7 +1,7 @@
 String infileName = "dies.txt"; //Fitxer dins de la carpeta `data`
 String intFile = "numeros.txt"; //Fitxer dins de la carpeta `data`
 
-String outFileName = "seid.txt"; //Fitxer amb el text de 'dies.txt' al revés
+String outFileName = "data/seid.txt"; //Fitxer amb el text de 'dies.txt' al revés
 
 String[] linesIn = loadStrings(infileName); //Llegir les Strings del fitxer. Separador '\n'
 String[] linesOut = new String[linesIn.length];
