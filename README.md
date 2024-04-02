@@ -10,6 +10,8 @@ A la carpeta `p5.js` hi ha un exemple de processing insertat en un web amb la ll
 
 - Random walker
 - Random walker amb `noise()`
+- Falling blocks
+- [Falling sand](https://www.youtube.com/watch?v=L4u7Zy_b868&ab_channel=TheCodingTrain) (with physics)
 - Dibuixar graella de `n` per `m` blocs que es puguin pintar
 - Pilotes generades al fer clic
 - Simulació [pluja](https://www.youtube.com/watch?v=KkyIDI6rQJI)
