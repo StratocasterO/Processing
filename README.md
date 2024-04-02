@@ -8,6 +8,7 @@ A la carpeta `p5.js` hi ha un exemple de processing insertat en un web amb la ll
 
 ### Idees de projectes
 
+- Dibuixar graella de `n` per `m` blocs que es puguin pintar
 - Pilotes generades al fer clic
 - Simulació [pluja](https://www.youtube.com/watch?v=KkyIDI6rQJI)
 - Salvapantalles estrelles (rollo Star Wars)
