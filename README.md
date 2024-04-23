@@ -10,7 +10,7 @@ A la carpeta `p5.js` hi ha un exemple de processing insertat en un web amb la ll
 
 L'_sketch_ `lletres` dibuixa una línia entre cada parell de lletres consecutives del text donat. Pot ser interessant per comparar llengües.
 
-Això és un exemple de les imatges generades usant com a text l'article de la Viquipedia "música" en quatre llengues diferents:
+Això és un exemple de les imatges generades usant com a text l'[article de la Viquipedia "música"](https://ca.wikipedia.org/wiki/M%C3%BAsica) en quatre llengues diferents (els accents i altres lletres alterades han estat eliminats usant [aquest web](https://codebeautify.org/remove-accents)):
 
 | Català | Castellà | Anglès | Alemany |
 |--------|----------|--------|---------|
