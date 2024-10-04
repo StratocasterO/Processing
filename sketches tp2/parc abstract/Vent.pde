@@ -1,7 +1,9 @@
+import java.util.Vector;
+
 class Vent extends Instrument {
   private boolean desinfectat;
   
-  Vent(String nom, int numSerie, float pes, Accessori[] accessoris, boolean desinfectat) {
+  Vent(String nom, int numSerie, float pes, Vector<Accessori> accessoris, boolean desinfectat) {
     super(nom, numSerie, pes, accessoris);
     this.desinfectat = desinfectat;
   }

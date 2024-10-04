@@ -1,57 +1,85 @@
 //Instrument(String nom, int numSerie, float pes, Accessori[] accessoris)
+import java.util.Vector;
 
-Instrument[] parc;
-Instrument violi, piano, teclat, flauta, trombo, vibrafon;
-Accessori[] accGuitarra, accPiano, accTrombo, accVioli, accVibrafon;
+Vector<Instrument> parc;
+Instrument violi, piano, teclat, flauta, trombo, vibrafon, marimba;
+Vector<Accessori> accGuitarra, accPiano, accTrombo, accVioli, accVibrafon, accMarimba;
 
 void setup() {
-  // Instrument genèric
-  accVioli = new Accessori[3];
-  accVioli[0] = new Accessori("resina");
-  accVioli[1] = new Accessori("arc");
-  accVioli[2] = new Accessori("costella");
-  
-  violi = new Instrument("Violí Stradivarius", 15, 2.2, accVioli);
+  // Instrument genèric -> ja no existeixen!
+  // violi = new Instrument("Violí Stradivarius", 15, 2.2, accVioli);
   
   // Instruments de tecla
-  accPiano = new Accessori[1];
-  accPiano[0] = new Accessori("banqueta");
+  accPiano = new Vector<Accessori>();
+  accPiano.add(new Accessori("banqueta"));
   
   piano = new Tecla("Steinway & Sons", 12876, 240.0, accPiano, true);
   
-  teclat = new Tecla("Moog One", 4321, 32.8, new Accessori[0], true);  // instrument sense accessoris
+  teclat = new Tecla("Moog One", 4321, 32.8, new Vector<Accessori>(), true);  // instrument sense accessoris
   
   // Instruments de vent
   
-  flauta = new Vent("Flauta baixa Yamaha", 236, 1.8, new Accessori[0], false);
+  flauta = new Vent("Flauta baixa Yamaha", 236, 1.8, new Vector<Accessori>(), false);
   
-  accTrombo = new Accessori[2];
-  accTrombo[0] = new Accessori("embocadura Bach");
-  accTrombo[1] = new Accessori("oli per la vara");
+  accTrombo = new Vector<Accessori>();
+  accTrombo.add(new Accessori("embocadura Bach"));
+  accTrombo.add(new Accessori("oli per la vara"));
 
   trombo = new Vent("Trombó Yamaha 235", 2255, 3.2, accTrombo, true);
   
   // Instruments de percussio
-  accVibrafon = new Accessori[3];
-  accVibrafon[0] = new Accessori("baquetes dures");
-  accVibrafon[1] = new Accessori("baquetes toves");
-  accVibrafon[2] = new Accessori("tamboret");
+  accVibrafon = new Vector<Accessori>();
+  accVibrafon.add(new Accessori("baquetes dures"));
+  accVibrafon.add(new Accessori("baquetes toves"));
+  accVibrafon.add(new Accessori("tamboret"));
   
-  vibrafon = new Percussio("Vibrafon Yamaha", 1234, 60.0, accVibrafon, false);
+  vibrafon = new Percussio("Vibrafon Yamaha", 1234, 60.0, accVibrafon, true);
   
-  parc = new Instrument[6];
-  parc[0] = violi;
-  parc[1] = piano;
-  parc[2] = teclat;
-  parc[3] = flauta;
-  parc[4] = trombo;
-  parc[5] = vibrafon;
+  // Instrument de percussio afinable
   
-  for (int i=0; i < parc.length; i++) {
-    println(parc[i].toString());
+  accMarimba = new Vector<Accessori>();
+  accMarimba.add(new Accessori("baquetes"));
+  accMarimba.add(new Accessori("llima per afinar"));
+  
+  marimba = new PercuCroma("Marimba Adams", 3142, 55.2, accMarimba, false, true);
+  
+  parc = new Vector<Instrument>();
+  parc.add(piano);
+  parc.add(teclat);
+  parc.add(flauta);
+  parc.add(trombo);
+  parc.add(vibrafon);
+  parc.add(marimba);
+    
+  for (int i = 0; i < parc.size(); i++) {
+    println(parc.get(i).toString());
   }
+  
+  println("\n " + getPes(parc));
+  println("\n " + getAcc(parc));
+  println("\n " + getAfinacio(parc));
 }
 
 void draw() {
-  
+  // not necessary here
 }
+
+String getPes(Vector<Instrument> parc) {
+  float pes = 0;
+  for (int i = 0; i < parc.size(); i++) pes += parc.get(i).getPes();
+  return "El pes total del parc d'instruments és de " + pes + " kg";
+}
+
+String getAcc(Vector<Instrument> parc) {
+  int acc = 0;
+  for (int i = 0; i < parc.size(); i++) acc += parc.get(i).accessoris.size();
+  return "El nombre total d'accessoris al parc d'instruments és de " + acc;
+}
+
+String getAfinacio(Vector<Instrument> parc) {
+  int desafinats = 0;
+  for (int i = 0; i < parc.size(); i++) ; // TODO isAfinable?
+  return "todo";
+}
+
+// TODO el mateix pero per saber els instruments de cada familia

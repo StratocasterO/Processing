@@ -1,10 +1,8 @@
-import java.util.Vector;
-
-class Tecla extends Instrument implements Afinable {
+class PercuCroma extends Percussio implements Afinable {
   private boolean afinat;
   
-  Tecla(String nom, int numSerie, float pes, Vector<Accessori> accessoris, boolean afinat) {
-    super(nom, numSerie, pes, accessoris);
+  PercuCroma(String nom, int numSerie, float pes, Vector<Accessori> accessoris, boolean plegable, boolean afinat) {
+    super(nom, numSerie, pes, accessoris, plegable);
     this.afinat = afinat;
   }
   

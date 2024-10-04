@@ -1,7 +1,9 @@
-class Percussio extends Instrument {
+import java.util.Vector;
+
+class Percussio extends Instrument implements Plegable {
   private boolean plegable;
   
-  Percussio(String nom, int numSerie, float pes, Accessori[] accessoris, boolean plegable) {
+  Percussio(String nom, int numSerie, float pes, Vector<Accessori> accessoris, boolean plegable) {
     super(nom, numSerie, pes, accessoris);
     this.plegable = plegable;
   }

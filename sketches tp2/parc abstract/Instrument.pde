@@ -1,14 +1,21 @@
-class Instrument {
+/* Canvis de Array a Vector:
+       Accessori[]  ->  Vector<Accessori>
+       .lenght      ->  .size()
+       [i]          ->  get(i)
+*/
+import java.util.Vector;
+
+abstract class Instrument {
   private String nom;
   private int numSerie;
   private float pes;
-  private Accessori[] accessoris;
+  private Vector<Accessori> accessoris; // els vectors són arrays sense dimensió definida
 
   Instrument() {
-    // default constructor (useful when instantiating without parameters, but not necessary)
+    // default constructor (necessary for inheritance)
   }
   
-  Instrument(String nom, int numSerie, float pes, Accessori[] accessoris) {
+  Instrument(String nom, int numSerie, float pes, Vector<Accessori> accessoris) {
     this.nom = nom;
     this.numSerie = numSerie;
     this.pes = pes;
@@ -27,14 +34,22 @@ class Instrument {
     this.nom =  nom;
   }
   
+  public float getPes() {
+    return pes;
+  }
+  
+  public void setPes(float pes) {
+    this.pes =  pes;
+  }
+  
   public String getAccessoris() {
-    if (this.accessoris.length == 0) return "cap"; // si no té accessoris
+    if (this.accessoris.size() == 0) return "cap"; // si no té accessoris //<>//
     
     String accessoris = "";
     
-    for (int i = 0; i < this.accessoris.length; i++) {
-      accessoris += this.accessoris[i].getNom();
-      if (i != this.accessoris.length - 1) accessoris += ", ";  // no afegeix separador a l'últim accessori
+    for (int i = 0; i < this.accessoris.size(); i++) {
+      accessoris += this.accessoris.get(i).getNom();
+      if (i != this.accessoris.size() - 1) accessoris += ", ";  // no afegeix separador a l'últim accessori
     }
     
     return accessoris; 
