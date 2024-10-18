@@ -15,7 +15,7 @@ void setup() {
   
   out.pauseNotes();
   
-  // Frequency.ofPitch("C3").asHz()
+  // Frequency.ofPitch("C3").asHz() per passar notes a freqüència
   out.playNote(0, 1, new OF1(Frequency.ofPitch("C3").asHz()));
   
   out.resumeNotes();
