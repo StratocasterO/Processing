@@ -14,6 +14,8 @@ void setup() {
   minim = new Minim(this);
   out = minim.getLineOut();
   MySampler sampler = new MySampler();
+
+  
 }
 
 void draw() {

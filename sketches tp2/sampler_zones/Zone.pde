@@ -1,20 +1,23 @@
 import brave.sampler.Sampler;
 public class Zone {
-    MySampler sampler;
+    Sampler sample;
     Gain gain;
-    int lowK, highK, root;
-    int lowV, highV;
+    int lowKey, highKey, root;
+    int lowVel, highVel;
     float vol, tune;
+    MySampler mySampler;
 
-    Zone (String path, String lowK, String highK, String root, int lowV, int highV, float vol, float tune, Sample sampler, Minim minim) {
-        sampler = new Sampler(path, 1, minim);
-        gain = new Gain();
+    Zone (String path, String lowKey, String highKey, String root, int lowVel, int highVel, float vol, float tune, MySampler mySampler, Minim minim) {
+        sample = new Sampler(path, 4, minim);
+        gain = new Gain(vol);
+
+        // transforms notes to frequencies
+        this.lowKey = round(Frequency.ofPitch(lowKey).asMidiNote());
+        this.highKey = round(Frequency.ofPitch(highKey).asMidiNote());
+        this.root = round(Frequency.ofPitch(root).asMidiNote());
         
-        this.lowK = lowK;
-        this.highK = highK;
-        this.root = root;
-        this.lowV = lowV;
-        this.highV = highV;
+        this.lowVel = lowVel;
+        this.highVel = highVel;
         this.vol = vol;
         this.tune = tune;
 
@@ -22,6 +25,6 @@ public class Zone {
     }
 
     public void noteOn(int key, int vel) {
-        sample.trigger();
+        sampler.trigger();
     }
 }
