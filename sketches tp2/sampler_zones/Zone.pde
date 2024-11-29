@@ -25,7 +25,8 @@ public class Zone {
     }
 
     public void noteOn(int key, int vel) {
-        float retune = (float)Math.pow(2,-(key - this.root)/12.0);
+        // TODO afegir volums
+        float retune = (float)Math.pow(2,-(key - this.root)/12.0); 
         sampler.setSampleRate(48000*retune); //ep,48000 si les mostres són a 48k…
         sampler.trigger();
     }
