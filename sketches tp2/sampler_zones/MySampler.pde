@@ -8,6 +8,7 @@ class MySampler{
 
     MySampler() {
         zones = new ArrayList<Zone>();
+        keyMap = new Zone[128][128];
         mix = new Summer();
         
         dbtable = new float[128];
@@ -23,12 +24,15 @@ class MySampler{
         }
     }
 
+    // noteOn amb notes escrites ("C3", "G4", "Eb5")
     void noteOn(String key, int vel) {
-        int freq = round(Frequency.ofPitch("G#3").asMidiNote());
-
+        int note = round(Frequency.ofPitch(key).asMidiNote());
+        Zone zone = keyMap[note][vel];
+        zone.noteOn(note, vel);
     }
 
     void noteOn(int key, int vel) {
-
+        Zone zone = keyMap[key][vel];
+        zone.noteOn(key, vel);
     }
 }
