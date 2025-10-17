@@ -8,7 +8,7 @@ A la carpeta `p5.js` hi ha un exemple de processing insertat en un web amb la ll
 
 ## Lletres
 
-L'_sketch_ [lletres](https://github.com/StratocasterO/Processing/blob/main/sketches/lletres/lletres.pde) dibuixa una línia entre cada parell de lletres consecutives del text donat. Pot ser interessant per comparar llengües.
+L'_sketch_ [lletres](https://github.com/StratocasterO/Processing/blob/main/sketches%20tp1/lletres/lletres.pde) dibuixa una línia entre cada parell de lletres consecutives del text donat. Pot ser interessant per comparar llengües.
 
 | Català | Castellà | Anglès | Alemany |
 |--------|----------|--------|---------|
