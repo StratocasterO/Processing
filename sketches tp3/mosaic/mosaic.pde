@@ -1,7 +1,13 @@
 /* TODO afegir que agafi les 5 imatges més properes
         posar al ChatGPT que parteixi d'aquest codi
         afegir reacció a la música
+
+   TODO perquè funcioni s'ha de descarregar un conjunt
+        d'imatges (p.e. un dataset de flors) i posar-les
+        a la carpeta ./data/flors/
 */
+
+
 
 PImage target;
 PImage[] tiles;
@@ -160,3 +166,4 @@ PImage getClosestTile(color targetColor) {
   
   return tiles[bestIndex];
 }
+
